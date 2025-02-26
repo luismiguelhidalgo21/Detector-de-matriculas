@@ -3,9 +3,12 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
     color: #333;
     line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
 }
 
 .container {
@@ -15,34 +18,84 @@ body {
     padding: 20px;
 }
 
-/* Header */
-header {
-    background-color: #4CAF50;
+/* Menú de Navegación */
+nav {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
     color: white;
-    padding: 60px 0;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #4CAF50;
+}
+
+/* Encabezado con imagen de fondo */
+header {
+    background-image: url('header-bg.jpg'); /* Cambia 'header-bg.jpg' por tu imagen */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 150px 0;
     text-align: center;
 }
 
 header h1 {
+    font-size: 3em;
     margin: 0;
-    font-size: 2.5em;
 }
 
 header p {
-    margin: 10px 0 0;
+    font-size: 1.5em;
+    margin: 20px 0;
+}
+
+.btn-primary {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px;
     font-size: 1.2em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
-/* Secciones */
+.btn-primary:hover {
+    background-color: #45a049;
+}
+
+/* Secciones con fondos alternados */
 section {
-    padding: 40px 0;
+    padding: 60px 0;
 }
 
-h2 {
+.dark-bg {
+    background-color: #333;
+    color: white;
+}
+
+.dark-bg h2 {
     color: #4CAF50;
-    font-size: 2em;
-    margin-bottom: 20px;
-    text-align: center;
 }
 
 /* Características */
@@ -73,36 +126,9 @@ h2 {
     color: #555;
 }
 
-/* Descarga */
-#download {
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-}
-
-#download p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-}
-
-.download-button {
-    background-color: white;
-    color: #4CAF50;
-    padding: 15px 30px;
-    font-size: 1.2em;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.download-button:hover {
-    background-color: #45a049;
-    color: white;
-}
-
-/* Footer */
+/* Pie de Página */
 footer {
-    background-color: #333;
+    background-color: #222;
     color: white;
     text-align: center;
     padding: 20px 0;
@@ -123,5 +149,17 @@ footer p {
     .feature {
         width: 100%;
         margin-bottom: 20px;
+    }
+
+    header {
+        padding: 100px 0;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1.2em;
     }
 }

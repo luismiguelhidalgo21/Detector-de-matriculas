@@ -4,7 +4,7 @@
     <!-- Metadatos básicos -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detección de Matrículas</title>
+    <title>Acerca de - Detección de Matrículas</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Estilos personalizados -->
@@ -23,7 +23,7 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 </head>
-<body class="main-layout">
+<body class="main-layout in_page">
     <!-- Loader -->
     <div class="loader_bg">
         <div class="loader"><img src="images/loading.gif" alt="#"/></div>
@@ -51,10 +51,10 @@
                             </button>
                             <div class="collapse navbar-collapse" id="navbarsExample04">
                                 <ul class="navbar-nav mr-auto">
-                                    <li class="nav-item active">
+                                    <li class="nav-item">
                                         <a class="nav-link" href="index.html">Inicio</a>
                                     </li>
-                                    <li class="nav-item">
+                                    <li class="nav-item active">
                                         <a class="nav-link" href="about.html">Acerca de</a>
                                     </li>
                                     <li class="nav-item">
@@ -79,52 +79,99 @@
     </header>
     <!-- End Header -->
 
-    <!-- Banner -->
-    <section class="banner_main">
-        <div id="myCarousel" class="carousel slide banner" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="container">
-                        <div class="carousel-caption relative">
-                            <div class="row">
-                                <div class="col-md-7 offset-md-5">
-                                    <div class="text-bg">
-                                        <h1>Detección de Matrículas</h1>
-                                        <span>Sistema automático de reconocimiento de matrículas vehiculares.</span>
-                                        <a class="read_more" href="about.html">Leer más</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Repite para más slides si es necesario -->
-            </div>
-            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                <i class="fa fa-angle-left" aria-hidden="true"></i>
-                <span class="sr-only">Anterior</span>
-            </a>
-            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-                <span class="sr-only">Siguiente</span>
-            </a>
-        </div>
-    </section>
-    <!-- End Banner -->
-
     <!-- About Section -->
     <div id="about" class="about">
         <div class="container">
             <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-12">
                     <div class="titlepage">
                         <h2>Acerca del <span class="green">Proyecto</span></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="about_img">
+                        <figure><img src="images/about.png" alt="#" /></figure>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="about_text">
                         <p>
                             Este proyecto utiliza tecnologías avanzadas de visión por computadora y OCR (Reconocimiento Óptico de Caracteres) para detectar y reconocer matrículas vehiculares en tiempo real. Es ideal para aplicaciones de seguridad, control de acceso y gestión de tráfico.
                         </p>
-                        <
+                        <p>
+                            El sistema es capaz de procesar imágenes en tiempo real, identificar las matrículas y extraer la información necesaria para su posterior uso en diversas aplicaciones.
+                        </p>
+                        <a class="read_more" href="service.html">Ver Servicios</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End About Section -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <ul class="social_icon">
+                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        </ul>
+                        <p class="variat pad_roght2">
+                            Proyecto de detección de matrículas vehiculares utilizando tecnologías de visión por computadora y OCR.
+                        </p>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <h3>Información</h3>
+                        <ul class="link_menu">
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="about.html">Acerca de</a></li>
+                            <li><a href="service.html">Servicios</a></li>
+                            <li><a href="gallery.html">Galería</a></li>
+                            <li><a href="testimonial.html">Testimonios</a></li>
+                            <li><a href="contact.html">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <h3>Contacto</h3>
+                        <p class="variat">
+                            Si tienes alguna pregunta, no dudes en contactarnos.
+                        </p>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <form id="hkh" class="bottom_form">
+                            <input class="enter" placeholder="Ingresa tu email" type="text" name="Enter your email">
+                            <button class="sub_btn">Suscribirse</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-10 offset-md-1">
+                            <p>© 2023 Detección de Matrículas. Todos los derechos reservados.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Javascript files -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.0.0.min.js"></script>
+    <!-- sidebar -->
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+</html>
+                                   
