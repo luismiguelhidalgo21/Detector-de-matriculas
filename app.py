@@ -17,6 +17,10 @@ output_dir = r"C:\Users\prep5\Desktop\project_folder\matriculas_detectadas"
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 
+# Variables globales
+ocr_thread = None
+cap = None
+
 # Iniciar la cámara
 cap = cv2.VideoCapture(0)  # 0 para la cámara predeterminada
 
@@ -24,6 +28,7 @@ if not cap.isOpened():
     print("Error: No se pudo acceder a la cámara.")
     exit()
 
+# Resto del código...
 # Cola para compartir frames entre el hilo principal y el hilo de OCR
 frame_queue = Queue(maxsize=10)
 
@@ -188,7 +193,7 @@ def start_recording():
     """
     Inicia la grabación y el procesamiento de OCR.
     """
-    global ocr_thread
+    global ocr_thread  # Declara ocr_thread como global
     ocr_thread = threading.Thread(target=ocr_worker, daemon=True)
     ocr_thread.start()
 
@@ -202,10 +207,14 @@ def stop_recording():
     """
     Detiene la grabación y libera los recursos.
     """
+    global ocr_thread  # Declara ocr_thread como global
     global cap
+
     frame_queue.put(None)
-    ocr_thread.join()
-    cap.release()
+    if ocr_thread is not None:
+        ocr_thread.join()
+    if cap is not None:
+        cap.release()
     cv2.destroyAllWindows()
     record_button.config(state=tk.NORMAL)
     stop_button.config(state=tk.DISABLED)
@@ -259,11 +268,15 @@ def on_closing():
     """
     Maneja el cierre de la aplicación liberando los recursos.
     """
+    global ocr_thread  # Declara ocr_thread como global
+    global cap
+
     if messagebox.askokcancel("Salir", "¿Estás seguro de que quieres salir?"):
         frame_queue.put(None)
-        if ocr_thread.is_alive():
+        if ocr_thread is not None and ocr_thread.is_alive():
             ocr_thread.join()
-        cap.release()
+        if cap is not None:
+            cap.release()
         cv2.destroyAllWindows()
         root.destroy()
 
